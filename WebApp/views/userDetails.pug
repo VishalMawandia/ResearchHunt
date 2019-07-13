@@ -1,0 +1,145 @@
+extends layout
+
+block header
+	link(rel="stylesheet", href="css/sidePanel.css")
+	link(rel="stylesheet", href="css/userDetails.css")
+	script(src="scripts/userDetails.js")
+block content
+	- function getExpiry(d,n){var x = new Date(d.setMonth(d.getMonth()+n));return x.toDateString();}
+
+	ul#sidenav.sidenav.sidenav-fixed
+		img.responsive-img(src='images/brand_logo_min.jpg', alt='Brand Logo')
+		.divider
+		li.hoverable
+			.welcomeSection
+				h5= adminName
+				p= adminEmail
+		.divider
+		li.hoverable
+			a(href='/dashboard') Dashboard
+		li.selected
+			a(href='/users') Manage students
+		if superadmin
+			li.hoverable
+				a(href='/admins') Manage admins
+		li.hoverable
+			a(href='/keywords') Manage Keywords
+		li.hoverable
+			a(href='/documents') Add documents
+		li.hoverable
+			a(href='/change') Change password
+		li.hoverable
+			a(href='/logout') Logout
+	#content
+		nav.hide-on-large-only.white
+			.nav-wrapper
+				.center
+					img.scale-down(src="images/brand_logo_min.jpg" style="max-height: 56px;transform: translateX(-50px);")
+					ul.left
+						li
+							a#sidenav-trigger
+								i.material-icons.black-text menu
+		.row
+			.col.s12.m12
+				.usernameheader
+					.username #{data[columns.name]}
+					h6 #{data[columns.email]}
+		.row
+			.col.s12
+				.student-info
+					table
+						tbody
+							tr
+								th Name
+								td #{data[columns.name]}
+							tr
+								th Email Id
+								td #{data[columns.email]}
+							tr
+								th Guide's Name
+								td #{data.guide_name || '-'}
+							tr
+								th Guide's Email Id
+								td #{data[columns.mentorEmail] || "-"}
+							tr
+								th Research Faculty
+								td #{data.research_faculty || '-'}
+							tr
+								th Mobile Number
+								td 
+									div
+										.left #{data.phone}
+										.right
+											i.material-icons#phoneEdit(style="cursor:pointer") edit
+							tr
+								th Added on
+								td= (new Date(data[columns.registerDate])).toDateString()
+							tr
+								th Last Subscription date
+								td #{data[columns.renewalDate]!=null?(new Date(data[columns.renewalDate])).toDateString():"-"}
+							tr
+								th Date of Birth
+								td=  (new Date(data[columns.dob])).toDateString()
+							tr
+								th Status
+								td= data[columns.subscribed]?"Subscribed":"Unsubscribed"
+		.row.subscriptionBox
+			.col.s12
+				.div.subsciptionEnd
+					if data[columns.subscribed]
+						- var expireDate = "Subscription ends on : " + getExpiry(data[columns.renewalDate],data.tenure_period);
+						p= expireDate
+					else
+						p= "User not subscribed"
+				if data[columns.subscribed]
+					.subscribed-items
+						ul.collection.with-header
+							li.collection-header
+								h6.flow-text Subscribed Keywords
+							for keyword in keywords
+								li.collection-item= keyword
+				.subscription-buttons.right(style="margin-top:10px")
+					div#id(style="display:none;") #{data[columns.id]}
+					- var historyLink = "/users/history/"+data[columns.id]
+					a.btn.waves-effect.waves-light#history(href=historyLink) History
+						i.material-icons.left history
+					if data[columns.subscribed]
+						button.btn.waves-effect.waves-light#renew Renew
+							i.material-icons.left autorenew
+					if data[columns.subscribed]
+						button.btn.waves-effect.waves-light#unsubscribe Unsubscribe
+							i.material-icons.left delete
+					if data[columns.subscribed]
+						button.btn.waves-effect.waves-light.modal-trigger#edit(href="#modal") Edit
+							i.material-icons.left edit
+					if data[columns.subscribed]
+						button.btn.waves-effect.waves-light#send Send Relevent Matches
+							i.material-icons.left send
+					if data[columns.subscribed]
+						button.btn.waves-effect.waves-light#sendExact Send Exact Matches
+							i.material-icons.left(style="transform:rotate(-90deg)") send
+					unless data[columns.subscribed]
+						button.btn.waves-effect.waves-light.modal-trigger#subscribe(href="#modal") Subscribe
+							i.material-icons.left add
+		#modal.modal.modal-fixed-footer
+			#allKeywords(style="display:none;" data=allKeywords)
+			#userKeywords(style="display:none;" data=keywords.join(';'))
+			#and_or(data=and_or style="display:none;")
+			.modal-content
+				div
+					h5 Modify Subscription
+				hr
+				br
+				div
+					h5 Add/Remove Keywords
+					h6 Type the keyword and press enter
+					div(style="border:1px rgba(0,0,0,0.2);cursor:pointer")#clear-btn
+						h6.right Clear All
+							i.material-icons.right(style="position:relative;top:-6px") clear
+				br
+				br
+				.chips.chips-autocomplete.input-field
+					input.input(style="width:25% !important")
+				<div class="switch right"><label>OR<input type="checkbox" data=#{and_or}><span class="lever"></span>AND</label></div>
+			.modal-footer
+				btn#modifysubscription.modal-close.waves-effect.waves-blue.btn-flat Save

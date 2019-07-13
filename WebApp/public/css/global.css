@@ -1,0 +1,22 @@
+.loadingModal{
+	display: block;
+	position: fixed;
+	height: 100%;
+	z-index: 10000;
+	width: 100%;
+	background: rgba(255, 255, 255, .8);
+}
+
+body.loading .loading-modal{
+	display: block;
+	overflow: hidden;
+}
+
+.ld-spin,.ld-spin-fast{
+	font-size:64px;
+	color:#8da;
+}
+
+body{
+	margin-bottom: 0;
+}

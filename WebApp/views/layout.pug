@@ -1,0 +1,27 @@
+doctype html
+html
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		meta(http-equiv='X-UA-Compatible', content='ie=edge')
+		title= title
+
+		script(src="bower_components/jquery/dist/jquery.min.js")
+		script(src="scripts/global.js")
+
+		link(rel='stylesheet' href='bower_components/materialize/dist/css/materialize.min.css')
+		script(src="bower_components/materialize/dist/js/materialize.min.js")
+		link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+
+		script(src="https://unpkg.com/sweetalert/dist/sweetalert.min.js")
+
+		link(rel="stylesheet", href="bower_components/fontawesome/css/all.min.css")
+		script(src="bower_components/fontawesome/js/all.min.js")
+
+		link(rel="stylesheet", href="css/loader.css")
+
+		link(rel='stylesheet' href='css/global.css')
+		block header
+
+	body
+		block content

@@ -1,0 +1,26 @@
+extends layout.pug
+
+block header
+	link(rel="stylesheet", href="css/setup.css")
+	script(src="scripts/projectSetup.js")
+block content
+	if count!=0
+		h4.center-align Project&nbsp;has&nbsp;already&nbsp;been&nbsp;setup.
+	else
+		.center-align
+			h4 Super Admin setup page
+		.card
+			form.form
+				.input-field
+					input#email.validate(type='email' required)
+					label(for='email') Email
+					span.helper-text(data-error='Invalid email address')
+				.input-field
+					input#name.validate(type='text' required pattern="^([A-Z]|[a-z]){3,}([A-Z]|[a-z]|[\" \"])*$")
+					label(for='name') Name
+					span.helper-text(data-error='Invalid Name')
+				.input-field
+					input#password.validate(type="password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})")
+					label(for="password") Password
+					span.helper-text(data-error='Must contain a Number,Uppercase and Lowercase letters')
+				button.waves-effect.waves-light.btn.blue.white-1text#submit-btn Create&nbsp;Super&nbsp;Admin

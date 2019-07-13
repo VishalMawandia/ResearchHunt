@@ -1,0 +1,54 @@
+.card-panel {
+  padding: 16px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.count-box:hover {
+  padding: 16px;
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07);
+}
+
+#content .container-fluid {
+  margin: 0 1%;
+}
+
+canvas {
+  margin: 10px;
+  border: #bdbdbd 1px dotted;
+}
+
+.fill {
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.scale-down {
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
+.none {
+  -o-object-fit: none;
+     object-fit: none;
+}
+
+table {
+  border: rgba(0, 0, 0, 0.1) 1px solid;
+}
+
+table thead {
+  border-bottom: rgba(0, 0, 0, 0.1) 1px solid;
+}
+/*# sourceMappingURL=dashboard.css.map */

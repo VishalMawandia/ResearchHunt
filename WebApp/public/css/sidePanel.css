@@ -1,0 +1,49 @@
+.welcomeSection {
+  margin-left: 15px;
+}
+
+.welcomeSection h5 {
+  font-size: 23px;
+  margin-bottom: 0;
+}
+
+.welcomeSection p {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: gray;
+}
+
+.sidenav li {
+  padding-top: 8px;
+  padding-bottom: 10px;
+}
+
+.sidenav .hoverable:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding-top: 8px;
+  padding-bottom: 10px;
+}
+
+.sidenav .selected {
+  background-color: #41a1e0;
+}
+
+.sidenav .selected a {
+  color: white;
+  font-size: 100%;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-transform: translateX(15px);
+          transform: translateX(15px);
+}
+
+header, main, footer, #content {
+  padding-left: 300px;
+}
+
+@media only screen and (max-width: 992px) {
+  header, main, footer, #content {
+    padding-left: 0;
+  }
+}
+/*# sourceMappingURL=sidePanel.css.map */

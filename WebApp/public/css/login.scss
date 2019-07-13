@@ -1,0 +1,100 @@
+$colors: (primary: #b4edde,
+secondary: rgb(55, 88, 233));
+
+.root-container { 
+	height: 100vh;
+}
+
+
+.hidden{
+	display: none;
+}
+
+@mixin desktop-design {
+	@media (min-width:700px) {
+		@content;
+	}
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: map-get($map: $colors, $key: primary);
+
+	.bg {
+		height: 100%;
+		background-image: url('../images/login-background.png');
+		background-size: cover;
+		clip-path: polygon(100% 0, 100% 57%, 44% 100%, 0 100%, 0 0);
+
+		@include desktop-design{
+			clip-path: polygon(0 0, 81% 0, 61% 100%, 0 100%);
+		}
+	}
+
+	#login-card{
+
+		@include desktop-design{
+			position: absolute;
+			left: 25%;
+			top: 30%;
+			width: 17%;
+			height: 17%;
+		}
+
+		position: absolute;
+		top: 20%;
+		left: 50%;
+		width: 30%;
+		height: 20%;
+		transform: translate(-50%,-50%);
+	}
+
+	#login-div {
+
+		@include desktop-design{
+			width: 25%;
+			height: 40%;
+			position: absolute;
+			top: 47%;
+			left:73.5%;
+			transform: translate(-50%,-50%);
+		}
+
+		border-radius: 3%;
+		position: absolute;
+		top: 60%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+
+
+		.input-field {
+			margin: 3% 10%;
+		}
+
+		button {
+			margin: 2%;
+			width: 50%;
+			background-color: map-get($map: $colors, $key: secondary);
+
+			.ld{
+				font-size: 1.5em;
+			}
+
+		}
+
+	}
+
+	.heading {
+		font-size: 22px;
+		margin: 6% 4%;
+	}
+
+	#brandlogo{
+		position: absolute;
+		width: 60%;
+		height: 60%;
+
+	}
+
+}

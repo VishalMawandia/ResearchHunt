@@ -1,0 +1,114 @@
+extends layout
+
+block header
+	link(rel="stylesheet", href="css/dashboard.css")
+	script(src="scripts/dashboard.js")
+	link(rel="stylesheet", href="css/sidePanel.css")
+	script(src="bower_components/chart.js/dist/Chart.min.js")
+block content
+	ul#sidenav.sidenav.sidenav-fixed
+		img.responsive-img(src='images/brand_logo_min.jpg', alt='Brand Logo')
+		.divider
+		li.hoverable
+			.welcomeSection
+				h5= adminName
+				p= adminEmail
+		.divider
+		li.selected
+			a(href='/dashboard') Dashboard
+		li.hoverable
+			a(href='/users') Manage students
+		if superadmin
+			li.hoverable
+				a(href='/admins') Manage admins
+		li.hoverable
+			a(href='/keywords') Manage Keywords
+		li.hoverable
+			a(href='/documents') Add documents
+		li.hoverable
+			a(href='/change') Change password
+		li.hoverable
+			a(href='/logout') Logout
+	#content
+		nav.hide-on-large-only.white
+			.nav-wrapper
+				.center
+					img.scale-down(src="images/brand_logo_min.jpg" style="max-height: 56px;transform: translateX(-50px);")
+					ul.left
+						li
+							a#sidenav-trigger
+								i.material-icons.black-text menu
+		.container-fluid
+			.row
+				.col.s12
+					.card-panel
+						h5.black-text Welcome to ResearchHunt
+			.row
+				.col.s10.offset-s1.white-text.m4
+					.card-panel.pink.center.count-box
+						i.material-icons.medium person
+						h5 Registered Users
+						h6#registered 0
+				.col.s10.offset-s1.white-text.m4
+					.card-panel.green.center.count-box
+						i.material-icons.medium supervisor_account
+						h5 Subscribed Users
+						h6#subscribed 0
+				.col.s10.offset-s1.white-text.m4
+					.card-panel.blue.center.count-box
+						i.material-icons.medium insert_drive_file
+						h5 No. of documents
+						h6#documents 0
+			.row
+				.col.s12.m10.l6.offset-m1
+					canvas#chart
+				.col.s12.m10.l6.offset-m1
+					canvas#doughnutchart
+			.row
+				.col.s12.m6
+					h5.center-align.flow-text Top searched keywords
+					table#keywordTable.striped.highlight
+						thead
+							tr
+								th Keyword Name
+								th No. of searches
+						tbody
+							tr#key1
+								td Machine Learning
+								td 292
+							tr#key2
+								td Artificial Intellgence
+								td 250
+							tr#key3
+								td Networking
+								td 125
+							tr#key4
+								td UX
+								td 73
+							tr#key5
+								td Cryptography
+								td 21
+
+				.col.s12.m6
+					h5.center-align.flow-text Top matched documents
+					table#docTable.striped.highlight
+						thead
+							tr
+								th Name of document
+								th No. of matches
+						tbody
+							tr
+								td Document 1
+								td 26
+							tr
+								td Document 2
+								td 21
+							tr
+								td Document 3
+								td 19
+							tr
+								td Document 4
+								td 12
+							tr
+								td Document 5
+								td 8

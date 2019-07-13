@@ -1,0 +1,95 @@
+.root-container {
+  height: 100vh;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #b4edde;
+}
+
+body .bg {
+  height: 100%;
+  background-image: url("../images/login-background.png");
+  background-size: cover;
+  -webkit-clip-path: polygon(100% 0, 100% 57%, 44% 100%, 0 100%, 0 0);
+          clip-path: polygon(100% 0, 100% 57%, 44% 100%, 0 100%, 0 0);
+}
+
+@media (min-width: 700px) {
+  body .bg {
+    -webkit-clip-path: polygon(0 0, 81% 0, 61% 100%, 0 100%);
+            clip-path: polygon(0 0, 81% 0, 61% 100%, 0 100%);
+  }
+}
+
+body #login-card {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 30%;
+  height: 20%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media (min-width: 700px) {
+  body #login-card {
+    position: absolute;
+    left: 25%;
+    top: 30%;
+    width: 17%;
+    height: 17%;
+  }
+}
+
+body #login-div {
+  border-radius: 3%;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media (min-width: 700px) {
+  body #login-div {
+    width: 25%;
+    height: 40%;
+    position: absolute;
+    top: 47%;
+    left: 73.5%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+body #login-div .input-field {
+  margin: 3% 10%;
+}
+
+body #login-div button {
+  margin: 2%;
+  width: 50%;
+  background-color: #3758e9;
+}
+
+body #login-div button .ld {
+  font-size: 1.5em;
+}
+
+body .heading {
+  font-size: 22px;
+  margin: 6% 4%;
+}
+
+body #brandlogo {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+}
+/*# sourceMappingURL=login.css.map */

@@ -1,0 +1,31 @@
+{
+  "name": "sih",
+  "version": "1.0.0",
+  "description": "Webapplication for smart india hackathon 2019",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app"
+  },
+  "author": "Akash Raj Singh",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.2",
+    "bcrypt": "^3.0.4",
+    "body-parser": "^1.18.3",
+    "bower": "^1.8.8",
+    "chart.js": "^2.7.3",
+    "cookie-parser": "^1.4.4",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "multer": "^1.4.1",
+    "mysql": "^2.16.0",
+    "nodemailer": "^5.1.1",
+    "nodemon": "^1.18.10",
+    "password-hash-and-salt": "^0.1.4",
+    "pug": "^2.0.3",
+    "python-shell": "^1.0.7",
+    "sweetalert": "^2.1.2",
+    "twilio": "^3.29.0"
+  }
+}

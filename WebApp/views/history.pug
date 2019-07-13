@@ -1,0 +1,51 @@
+extends layout
+block header
+	link(rel="stylesheet", href="css/sidePanel.css")
+	link(rel="stylesheet", href="css/history.css")
+
+block content
+	ul#sidenav.sidenav.sidenav-fixed
+		img.responsive-img(src='images/brand_logo_min.jpg', alt='Brand Logo')
+		.divider
+		li.hoverable
+			.welcomeSection
+				h5= adminName
+				p= adminEmail
+		.divider
+		li.hoverable
+			a(href='/dashboard') Dashboard
+		li.selected
+			a(href='/users') Manage students
+		if superadmin
+			li.hoverable
+				a(href='/admins') Manage admins
+		li.hoverable
+			a(href='/keywords') Manage Keywords
+		li.hoverable
+			a(href='/documents') Add documents
+		li.hoverable
+			a(href='/change') Change password
+		li.hoverable
+			a(href='/logout') Logout
+	#content
+		nav.hide-on-large-only.white
+			.nav-wrapper
+				.center
+					img.scale-down(src="images/brand_logo_min.jpg" style="max-height: 56px;transform: translateX(-50px);")
+					ul.left
+						li
+							a#sidenav-trigger
+								i.material-icons.black-text menu
+		if date.length==0
+			h5 No history for this user found
+		else
+			ul.collection
+				- for(var i=0;i<date.length;i++)
+					li.historycard
+						.card(style="padding:10px;")
+							h5 #{date[i]}
+							br
+							p #{keywords[i]}
+							hr
+							- for(j=0;j<document_ids[i].length;j++)
+								p #{(j+1).toString() + ".\t"+document_ids[i][j]}

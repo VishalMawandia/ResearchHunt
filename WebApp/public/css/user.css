@@ -1,0 +1,13 @@
+table {
+  border: rgba(0, 0, 0, 0.1) 1px solid;
+}
+
+table th, table td {
+  border-bottom: rgba(0, 0, 0, 0.1) 1px solid;
+}
+
+.search-div {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+/*# sourceMappingURL=user.css.map */

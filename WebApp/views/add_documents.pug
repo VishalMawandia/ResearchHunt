@@ -1,0 +1,65 @@
+extends layout
+
+block header
+	link(rel="stylesheet", href="css/sidePanel.css")
+	link(rel="stylesheet", href="css/add_user.css")
+	script(src="scripts/documents.js")
+block content
+	ul#sidenav.sidenav.sidenav-fixed
+		img.responsive-img(src='images/brand_logo_min.jpg', alt='Brand Logo')
+		.divider
+		li.hoverable
+			.welcomeSection
+				h5= adminName
+				p= adminEmail
+		.divider
+		li.hoverable
+			a(href='/dashboard') Dashboard
+		li.hoverable
+			a(href='/users') Manage students
+		if superadmin
+			li.hoverable
+				a(href='/admins') Manage admins
+		li.hoverable
+			a(href='/keywords') Manage Keywords
+		li.selected
+			a(href='/documents') Add documents
+		li.hoverable
+			a(href='/change') Change password
+		li.hoverable
+			a(href='/logout') Logout
+	#content
+		nav.hide-on-large-only.white
+			.nav-wrapper
+				.center
+					img.scale-down(src="images/brand_logo_min.jpg" style="max-height: 56px;transform: translateX(-50px);")
+					ul.left
+						li
+							a#sidenav-trigger
+								i.material-icons.black-text menu
+		#redirect(style="display:none") #{isRedirect}
+		.row
+			form.form.col.m6.offset-m3.s10.offset-s1.z-depth-3.align-center#uploadForm(action="\\documents" method="POST" enctype="multipart/form-data")
+				h5.center-align Add New Document
+				.row
+					.input-field.col.s10.offset-s1.m10.offset-m1
+						input#title.validate(type='text' name="title")
+						label(for='title') Document Title
+				.row
+					.input-field.col.s10.offset-s1.m10.offset-m1
+						input#keyword.validate(type='text' name="keyword")
+						label(for='keyword') Keywords seperated by semicolon
+				.row
+					.input-field.col.s10.offset-s1.m10.offset-m1
+						input#citation.validate(type="text" name="citation")
+						label(for='citation') Citations
+				.row
+					.file-field.input-field.offset-s1.col.s10
+						.btn
+							span Browse
+							input#fileUpload(type='file' name="fileUpload")
+						.file-path-wrapper
+							input.file-path.validate(placeholder='Upload file', type='text')
+				.row
+					.col.s6.offset-s3.m4.offset-m4
+						button.btn.waves-effect.z-index-2#submit-btn(type="submit") Add Document

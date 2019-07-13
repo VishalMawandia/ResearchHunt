@@ -1,0 +1,51 @@
+$color_1: rgb(128,128,128);
+$color_2: rgb(255, 255, 255);
+$font_family_1: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$background_color_1: rgba(0,0,0,0.1);
+$background_color_2: #41a1e0;
+
+.welcomeSection {
+	margin-left: 15px;
+	h5 {
+		font-size: 23px;
+		margin-bottom: 0;
+	}
+	p {
+		margin-top: 0;
+		margin-bottom: 0;
+		color: $color_1;
+	}
+}
+
+.sidenav {
+	li {
+		padding-top: 8px;
+		padding-bottom: 10px;
+	}
+	.hoverable { 
+		&:hover {
+			background-color: $background_color_1;
+			padding-top: 8px;
+			padding-bottom: 10px;
+		}
+	}
+	.selected {
+		background-color: $background_color_2;
+		a {
+			color: $color_2;
+			font-size: 100%;
+			font-weight: bold;
+			font-family: $font_family_1;
+			transform: translateX(15px);
+		}
+	}
+}
+
+header,main,footer,#content {
+	padding-left: 300px;
+}
+@media only screen and (max-width : 992px) {
+	header,main,footer,#content {
+		padding-left: 0;
+	}
+}

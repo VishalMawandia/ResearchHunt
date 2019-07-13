@@ -1,0 +1,56 @@
+extends layout
+
+block header
+	link(rel="stylesheet", href="css/sidePanel.css")
+	script(src="scripts/keyword.js")
+
+block content
+	ul#sidenav.sidenav.sidenav-fixed
+		img.responsive-img(src='images/brand_logo_min.jpg', alt='Brand Logo')
+		.divider
+		li.hoverable
+			.welcomeSection
+				h5= adminName
+				p= adminEmail
+		.divider
+		li.hoverable
+			a(href='/dashboard') Dashboard
+		li.hoverable
+			a(href='/users') Manage students
+		if superadmin
+			li.hoverable
+				a(href='/admins') Manage admins
+		li.selected
+			a(href='/keywords') Manage Keywords
+		li.hoverable
+			a(href='/documents') Add documents
+		li.hoverable
+			a(href='/change') Change password
+		li.hoverable
+			a(href='/logout') Logout
+	#content
+		nav.hide-on-large-only.white
+			.nav-wrapper
+				.center
+					img.scale-down(src="images/brand_logo_min.jpg" style="max-height: 56px;transform: translateX(-50px);")
+					ul.left
+						li
+							a#sidenav-trigger
+								i.material-icons.black-text menu
+		.container-fluid
+			.row
+				.col.s12
+					.card-panel
+						h5.black-text Manage Keywords
+			.row
+				.col.s10.offset-s1
+					ul.collection
+						each keyword in keywords
+							if keyword!=""
+								li.collection-item 
+									span #{keyword}
+									a.secondary-content.deletebtn(style="cursor:pointer;") Delete
+										i.material-icons.left delete
+	.fixed-action-btn
+		a.btn-floating.btn-large.red
+			i.large.material-icons add

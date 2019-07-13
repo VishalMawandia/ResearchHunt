@@ -1,0 +1,25 @@
+extends layout.pug
+block header
+	link(rel="stylesheet" href="css/login.css")
+	script(src="scripts/login.js")
+
+block content
+	.container-fluid.root-container
+		.bg
+	.row
+		#login-div.card.white.col.s10.z-depth-5.center-align
+			.flowtext.heading Login Page
+			.row
+				form.col.s12
+					.row
+						.input-field.col.s10.offset-s1
+							i.material-icons.prefix email
+							input#email_field.validate(type='email')
+							label(for='email_field') Email Id
+						.input-field.col.s10.offset-s1
+							i.material-icons.prefix lock
+							input#password_field.materialize-textarea(type='password')
+							label(for='password_field') Password
+						.center-align.red-text.hidden Incorrect Email/Password
+						button.btn.waves-effect.waves-light.ld-ext-right#submit-btn(type='submit')
+							| Log In

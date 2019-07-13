@@ -1,0 +1,14 @@
+{
+  "name": "loader",
+  "homepage": "https://github.com/memob0x/loader",
+  "_release": "66f3e2f2bb",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "66f3e2f2bb4d4cd4be4e40ac6a1e8c1a170184c0"
+  },
+  "_source": "https://github.com/memob0x/loader.git",
+  "_target": "*",
+  "_originalSource": "loader",
+  "_direct": true
+}

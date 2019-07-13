@@ -1,0 +1,45 @@
+.usernameheader {
+  border: rgba(0, 0, 0, 0.2) 1px solid;
+  background-color: #41a1e0;
+  color: white;
+  padding-left: 2%;
+}
+
+.usernameheader .username {
+  font-size: 30px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.usernameheader h6 {
+  margin-top: 0;
+}
+
+.info {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.info .header {
+  font-size: 18px;
+  font-weight: bolder;
+  color: gray;
+}
+
+.info p {
+  font-size: 17px;
+}
+
+.subsciptionEnd {
+  border: rgba(0, 0, 0, 0.2) 1px solid;
+  background-color: #41a1e0;
+  color: white;
+  font-weight: bolder;
+  padding-left: 2%;
+}
+
+.subscription-buttons .btn {
+  margin-right: 10px;
+}
+/*# sourceMappingURL=userDetails.css.map */

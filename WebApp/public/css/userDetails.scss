@@ -1,0 +1,48 @@
+$headerColorBackground: #41a1e0;
+$headerColor: white;
+
+.usernameheader{
+	border: rgba(0,0,0,0.2) 1px solid;
+	background-color: $headerColorBackground;
+	color: $headerColor;
+	padding-left: 2%;
+	.username{
+		font-size: 30px;
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+	h6{
+		margin-top: 0;
+	}
+}
+
+.info{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+
+	.header{
+		font-size: 18px;
+		font-weight: bolder;
+		color: gray;
+	}
+
+	p{
+		font-size: 17px;
+	}
+
+}
+
+.subsciptionEnd{
+	border: rgba(0,0,0,0.2) 1px solid;
+	background-color: $headerColorBackground;
+	color: $headerColor;
+	font-weight: bolder;
+	padding-left: 2%;
+}
+
+.subscription-buttons{
+	.btn{
+		margin-right: 10px;
+	}
+}
