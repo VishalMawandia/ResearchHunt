@@ -23,7 +23,7 @@
     "nodemailer": "^5.1.1",
     "nodemon": "^1.18.10",
     "password-hash-and-salt": "^0.1.4",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "python-shell": "^1.0.7",
     "sweetalert": "^2.1.2",
     "twilio": "^3.29.0"
