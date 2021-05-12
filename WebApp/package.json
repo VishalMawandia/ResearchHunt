@@ -13,7 +13,7 @@
     "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
     "bower": "^1.8.8",
-    "chart.js": "^2.7.3",
+    "chart.js": "^2.9.4",
     "cookie-parser": "^1.4.4",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
